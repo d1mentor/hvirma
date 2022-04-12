@@ -11,6 +11,15 @@
   </head>
 
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <% if user_signed_in? %>
+      <p>Hello <%= current_user.email %></p>
+      <% else %>
+      <p>Hello neznakomets</p>
+    <% end %>  
+
     <%= yield %>
   </body>
 </html>
